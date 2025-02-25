@@ -14,8 +14,8 @@ public class divide implements command {
             throw new IllegalArgumentException("Divide command requires at least two values in the stack.");
         }
 
-        double b = context.get_stack().pop();
-        double a = context.get_stack().pop();
+        double second = context.get_stack().pop();
+        double first = context.get_stack().pop();
 
         if (b == 0) {
             logger.error("Divide operation failed: Division by zero.");
@@ -23,9 +23,7 @@ public class divide implements command {
             throw new IllegalArgumentException("Cannot divide by zero.");
         }
 
-        double result = a / b;
-
-        context.get_stack().push(result);
-        logger.info("Divide executed: {} + {} = {}", a, b, result);
+        context.get_stack().push(first / second);
+        logger.info("Divide executed: {} + {} = {}", first, second, first / second);
     }
 }
