@@ -14,11 +14,10 @@ public class subtract implements command {
             throw new IllegalArgumentException("Subtract command requires at least two values in the stack.");
         }
 
-        double b = context.get_stack().pop();
-        double a = context.get_stack().pop();
-        double result = a - b;
+        double second = context.get_stack().pop();
+        double first = context.get_stack().pop();
 
-        context.get_stack().push(result);
-        logger.info("Subtract executed: {} + {} = {}", a, b, result);
+        context.get_stack().push(first - second);
+        logger.info("Subtract executed: {} + {} = {}", first, second, first - second);
     }
 }
