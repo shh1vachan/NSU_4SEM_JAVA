@@ -1,0 +1,9 @@
+PUSH -> commands.Push
+POP -> commands.Pop
+ADD -> commands.Add
+SUBTRACT -> commands.Subtract
+MULTIPLY -> commands.Multiply
+DIVIDE -> commands.Divide
+SQRT -> commands.SquareRoot
+DEFINE -> commands.Define
+PRINT -> commands.PrintVal

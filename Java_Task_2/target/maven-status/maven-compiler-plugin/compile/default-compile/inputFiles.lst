@@ -1,0 +1,14 @@
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Divide.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/logger/CalcLogger.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/context/ExecutionContext.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/factory/CommandFactory.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Pop.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Add.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/PrintVal.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/SquareRoot.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/mainclass/Main.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Multiply.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Define.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Push.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Command.java
+/home/shh1vachan/IdeaProjects/Task_2/src/main/java/commands/Subtract.java

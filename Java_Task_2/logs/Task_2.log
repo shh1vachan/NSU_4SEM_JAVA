@@ -1,0 +1,176 @@
+2025-02-27 00:39:52 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:39:52 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:39:59 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:39:59 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:40:12 [mainclass.Main.main()] INFO : Creating command: MULTIPLY
+2025-02-27 00:40:12 [mainclass.Main.main()] INFO : Multiply executed: 2.0 + 10.0 = -8.0
+2025-02-27 00:40:12 [mainclass.Main.main()] INFO : Command MULTIPLY created successfully.
+2025-02-27 00:40:20 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:40:20 [mainclass.Main.main()] INFO : PRINT executed: Printed value -8.0
+2025-02-27 00:40:20 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:45:06 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:45:06 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:45:11 [mainclass.Main.main()] INFO : Creating command: POP
+2025-02-27 00:45:11 [mainclass.Main.main()] INFO : Popped: 
+2025-02-27 00:45:11 [mainclass.Main.main()] INFO : Command POP created successfully.
+2025-02-27 00:45:18 [mainclass.Main.main()] INFO : Creating command: POP
+2025-02-27 00:45:18 [mainclass.Main.main()] ERROR: Pop failed. Pop command requires at least one value in the stack.
+2025-02-27 00:45:18 [mainclass.Main.main()] ERROR: Error creating command: POP
+java.lang.IllegalArgumentException: Pop command requires at least one value in the stack.
+	at commands.Pop.execute(Pop.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-02-27 00:45:18 [mainclass.Main.main()] ERROR: Error executing command: POP 15
+java.lang.IllegalStateException: Failed to create command: POP
+	at factory.CommandFactory.createCommand(CommandFactory.java:73) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.IllegalArgumentException: Pop command requires at least one value in the stack.
+	at commands.Pop.execute(Pop.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	... 6 more
+2025-02-27 00:45:44 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:45:44 [mainclass.Main.main()] ERROR: Print operation failed: Stack is empty.
+2025-02-27 00:45:44 [mainclass.Main.main()] ERROR: Error creating command: PRINT
+java.lang.IllegalArgumentException: Print command requires at least one value in the stack.
+	at commands.PrintVal.execute(PrintVal.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-02-27 00:45:44 [mainclass.Main.main()] ERROR: Error executing command: PRINT
+java.lang.IllegalStateException: Failed to create command: PRINT
+	at factory.CommandFactory.createCommand(CommandFactory.java:73) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.IllegalArgumentException: Print command requires at least one value in the stack.
+	at commands.PrintVal.execute(PrintVal.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	... 6 more
+2025-02-27 00:45:49 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:45:49 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:45:56 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:45:56 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:45:59 [mainclass.Main.main()] INFO : Creating command: DIVIDE
+2025-02-27 00:45:59 [mainclass.Main.main()] INFO : Divide executed: 150.0 / 4.0 = 37.5
+2025-02-27 00:45:59 [mainclass.Main.main()] INFO : Command DIVIDE created successfully.
+2025-02-27 00:46:04 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:46:04 [mainclass.Main.main()] INFO : PRINT executed: Printed value 37.5
+2025-02-27 00:46:04 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:46:07 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:46:07 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:46:10 [mainclass.Main.main()] INFO : Creating command: POP
+2025-02-27 00:46:10 [mainclass.Main.main()] INFO : Popped: 
+2025-02-27 00:46:10 [mainclass.Main.main()] INFO : Command POP created successfully.
+2025-02-27 00:46:12 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:46:12 [mainclass.Main.main()] INFO : PRINT executed: Printed value 37.5
+2025-02-27 00:46:12 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:46:32 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:46:32 [mainclass.Main.main()] INFO : PRINT executed: Printed value 37.5
+2025-02-27 00:46:32 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:46:36 [mainclass.Main.main()] INFO : Creating command: POP
+2025-02-27 00:46:36 [mainclass.Main.main()] INFO : Popped: 
+2025-02-27 00:46:36 [mainclass.Main.main()] INFO : Command POP created successfully.
+2025-02-27 00:46:38 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:46:38 [mainclass.Main.main()] ERROR: Print operation failed: Stack is empty.
+2025-02-27 00:46:38 [mainclass.Main.main()] ERROR: Error creating command: PRINT
+java.lang.IllegalArgumentException: Print command requires at least one value in the stack.
+	at commands.PrintVal.execute(PrintVal.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-02-27 00:46:38 [mainclass.Main.main()] ERROR: Error executing command: PRINT
+java.lang.IllegalStateException: Failed to create command: PRINT
+	at factory.CommandFactory.createCommand(CommandFactory.java:73) ~[classes/:?]
+	at mainclass.Main.executeCommand(Main.java:67) ~[classes/:?]
+	at mainclass.Main.main(Main.java:53) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.IllegalArgumentException: Print command requires at least one value in the stack.
+	at commands.PrintVal.execute(PrintVal.java:15) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:66) ~[classes/:?]
+	... 6 more
+2025-02-27 00:47:54 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:47:54 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:47:57 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:47:57 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:48:07 [mainclass.Main.main()] INFO : Creating command: SQRT
+2025-02-27 00:48:07 [mainclass.Main.main()] INFO : Sqrt executed: sqrt(20.0) = 4.47213595499958
+2025-02-27 00:48:07 [mainclass.Main.main()] INFO : Command SQRT created successfully.
+2025-02-27 00:48:11 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:48:11 [mainclass.Main.main()] INFO : PRINT executed: Printed value 4.47213595499958
+2025-02-27 00:48:11 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:48:17 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:48:17 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:48:24 [mainclass.Main.main()] INFO : Creating command: MULTIPLY
+2025-02-27 00:48:24 [mainclass.Main.main()] INFO : Multiply executed: 4.47213595499958 * 3.14 = 14.042506898698681
+2025-02-27 00:48:24 [mainclass.Main.main()] INFO : Command MULTIPLY created successfully.
+2025-02-27 00:48:28 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:48:28 [mainclass.Main.main()] INFO : PRINT executed: Printed value 14.042506898698681
+2025-02-27 00:48:28 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:51:55 [mainclass.Main.main()] ERROR: Cannot read file: input.txt
+2025-02-27 00:54:52 [mainclass.Main.main()] ERROR: Cannot read file: /input.txt
+2025-02-27 00:55:03 [mainclass.Main.main()] ERROR: Cannot read file: /resources/input.txt
+2025-02-27 00:56:35 [mainclass.Main.main()] INFO : Looking for file: /home/shh1vachan/IdeaProjects/Task_2/input.txt
+2025-02-27 00:56:35 [mainclass.Main.main()] ERROR: Cannot read file: input.txt
+2025-02-27 00:58:28 [mainclass.Main.main()] INFO : Looking for file: /home/shh1vachan/IdeaProjects/Task_2/input.txt
+2025-02-27 00:58:28 [mainclass.Main.main()] ERROR: Cannot read file: input.txt
+2025-02-27 00:58:39 [mainclass.Main.main()] INFO : Looking for file: /home/shh1vachan/IdeaProjects/Task_2/input.txt
+2025-02-27 00:58:39 [mainclass.Main.main()] ERROR: Cannot read file: input.txt
+2025-02-27 00:58:53 [mainclass.Main.main()] INFO : Looking for file: /input_file/input.txt
+2025-02-27 00:58:53 [mainclass.Main.main()] ERROR: Cannot read file: /input_file/input.txt
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Looking for file: /home/shh1vachan/IdeaProjects/Task_2/input.txt
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: ADD
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : ADD executed: 4.0 + 2.0 = 6.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command ADD created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : PRINT executed: Printed value 6.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: DIVIDE
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Divide executed: 8.0 / 2.0 = 4.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command DIVIDE created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : PRINT executed: Printed value 4.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PRINT created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: DEFINE
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Defined: a = 10.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command DEFINE created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Pushed variable: a with value 10.0
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: SQRT
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Sqrt executed: sqrt(10.0) = 3.1622776601683795
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command SQRT created successfully.
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Creating command: PRINT
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : PRINT executed: Printed value 3.1622776601683795
+2025-02-27 00:59:48 [mainclass.Main.main()] INFO : Command PRINT created successfully.
