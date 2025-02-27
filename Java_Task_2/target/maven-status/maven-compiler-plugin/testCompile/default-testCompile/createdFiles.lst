@@ -1,0 +1,9 @@
+commands/PushTest.class
+commands/SubtractTest.class
+commands/PopTest.class
+commands/MultiplyTest.class
+commands/DivideTest.class
+commands/DefineTest.class
+factory/FactoryTest.class
+commands/AddTest.class
+commands/SqrtTest.class

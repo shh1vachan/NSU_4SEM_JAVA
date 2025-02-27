@@ -10,9 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-
-public class Main 
-{
+public class Main {
     private static final Logger logger = CalcLogger.getLogger();
 
     public static void main(String[] args)
@@ -46,7 +44,6 @@ public class Main
                 System.exit(1);
             }
         }
-            
         else
         {
             Scanner scanner = new Scanner(System.in);
