@@ -3,6 +3,7 @@ package lab_3.text;
 import lab_3.model.MineField;
 import java.util.Scanner;
 
+
 public class ConsoleView {
     private final MineField minefield;
     private final Scanner scanner;
