@@ -66,9 +66,9 @@ public class SwingView extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (flagButton.isSelected()) {
-                minefield.toggleFlag(x, y);
-                buttons[x][y].setText("F");
-                flagButton.setSelected(false);
+                minefield.toggleFlag(x, y);  // Переключаем флаг в MineField
+                buttons[x][y].setText("F");  // Отображаем флаг на кнопке
+                flagButton.setSelected(false);  // Снимаем флажок с кнопки
             } else {
                 if (minefield.openCell(x, y)) {
                     updateButton(x, y);
@@ -88,6 +88,8 @@ public class SwingView extends JFrame {
         if (minefield.isRevealed(x, y)) {
             int value = minefield.getCellValue(x, y);
             buttons[x][y].setText(value == 0 ? "" : String.valueOf(value));
+        } else if (minefield.isFlagged(x, y)) {
+            buttons[x][y].setText("F");  // Отображаем флаг, если клетка помечена флагом
         }
     }
 
