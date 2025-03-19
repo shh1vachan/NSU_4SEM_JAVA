@@ -1,6 +1,7 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.stack.StackUnderflowException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -34,6 +35,6 @@ class MultiplyTest
     void testMultiplyInvalid()
     {
         context.get_stack().push((double)5);
-        assertThrows(IllegalArgumentException.class, () -> Multiply.execute(context, List.of()));
+        assertThrows(StackUnderflowException.class, () -> Multiply.execute(context, List.of()));
     }
 }

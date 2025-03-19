@@ -1,6 +1,8 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.arithmetic.ArithmeticException;
+import exceptions.stack.StackUnderflowException;
 import logger.CalcLogger;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
@@ -10,12 +12,12 @@ public class SquareRoot implements Command
     private static final Logger logger = CalcLogger.getLogger();
 
     @Override
-    public void execute(ExecutionContext context, List<String> args)
+    public void execute(ExecutionContext context, List<String> args) throws StackUnderflowException, ArithmeticException
     {
-        if (!args.isEmpty())
+        if (context.get_stack().isEmpty())
         {
-            logger.error("Sqrt operation failed: No arguments should be provided.");
-            throw new IllegalArgumentException("Sqrt command does not require any arguments.");
+            logger.error("Sqrt operation failed: Stack is empty.");
+            throw new StackUnderflowException("Sqrt command requires at least one value in the stack.");
         }
 
         double value = context.get_stack().pop();
@@ -23,7 +25,7 @@ public class SquareRoot implements Command
         if (value < 0)
         {
             logger.error("Sqrt operation failed: Cannot compute the square root of a negative number.");
-            throw new IllegalArgumentException("Cannot compute the square root of a negative number.");
+            throw new ArithmeticException("Cannot compute the square root of a negative number.");
         }
 
         double result = Math.sqrt(value);

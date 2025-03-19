@@ -1,6 +1,7 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.stack.StackUnderflowException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -34,6 +35,6 @@ class DivideTest
     void testDivideInvalid()
     {
         context.get_stack().push((double)5);
-        assertThrows(IllegalArgumentException.class, () -> Divide.execute(context, List.of()));
+        assertThrows(StackUnderflowException.class, () -> Divide.execute(context, List.of()));
     }
 }

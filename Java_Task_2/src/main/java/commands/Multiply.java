@@ -1,5 +1,7 @@
 package commands;
+
 import context.ExecutionContext;
+import exceptions.stack.StackUnderflowException;
 import logger.CalcLogger;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
@@ -9,12 +11,12 @@ public class Multiply implements Command
     private static final Logger logger = CalcLogger.getLogger();
 
     @Override
-    public void execute(ExecutionContext context, List<String> args)
+    public void execute(ExecutionContext context, List<String> args) throws StackUnderflowException
     {
         if (context.get_stack().size() < 2)
         {
             logger.error("Multiply operation failed: Not enough elements in stack.");
-            throw new IllegalArgumentException("Multiply command requires at least two values in the stack.");
+            throw new StackUnderflowException("Multiply command requires at least two values in the stack.");
         }
 
         double second = context.get_stack().pop();

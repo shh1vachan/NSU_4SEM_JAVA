@@ -1,6 +1,7 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.stack.StackUnderflowException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -33,6 +34,6 @@ class PopTest
     @Test
     void testPopEmptyStack()
     {
-        assertThrows(IllegalArgumentException.class, () -> Pop.execute(context, List.of()));
+        assertThrows(StackUnderflowException.class, () -> Pop.execute(context, List.of()));
     }
 }

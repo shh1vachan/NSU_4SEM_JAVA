@@ -1,6 +1,7 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.operation.OperationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -32,6 +33,6 @@ class DefineTest
     @Test
     void testDefineEmptyStack()
     {
-        assertThrows(IllegalArgumentException.class, () -> Define.execute(context, List.of("x", "invalid")));
+        assertThrows(OperationException.class, () -> Define.execute(context, List.of("x", "invalid")));
     }
 }

@@ -4,6 +4,7 @@ import context.ExecutionContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
+import exceptions.stack.StackUnderflowException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,6 +36,6 @@ class AddTest
     void testAddInvalid()
     {
         context.get_stack().push((double)5);
-        assertThrows(IllegalArgumentException.class, () -> Add.execute(context, List.of()));
+        assertThrows(StackUnderflowException.class, () -> Add.execute(context, List.of()));
     }
 }

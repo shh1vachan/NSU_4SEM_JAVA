@@ -1,5 +1,8 @@
 package commands;
+
 import context.ExecutionContext;
+import exceptions.arithmetic.DivisionByZeroException;
+import exceptions.stack.StackUnderflowException;
 import logger.CalcLogger;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
@@ -9,12 +12,12 @@ public class Divide implements Command
     private static final Logger logger = CalcLogger.getLogger();
 
     @Override
-    public void execute(ExecutionContext context, List<String> args)
+    public void execute(ExecutionContext context, List<String> args) throws StackUnderflowException, DivisionByZeroException
     {
         if (context.get_stack().size() < 2)
         {
             logger.error("Divide operation failed: Not enough elements in stack.");
-            throw new IllegalArgumentException("Divide command requires at least two values in the stack.");
+            throw new StackUnderflowException("Divide command requires at least two values in the stack.");
         }
 
         double second = context.get_stack().pop();
@@ -23,8 +26,8 @@ public class Divide implements Command
         if (second == 0)
         {
             logger.error("Divide operation failed: Division by zero.");
-            context.get_stack().push(second);
-            throw new IllegalArgumentException("Cannot divide by zero.");
+            context.get_stack().push(first);
+            throw new DivisionByZeroException("Cannot divide by zero.");
         }
 
         context.get_stack().push(first / second);

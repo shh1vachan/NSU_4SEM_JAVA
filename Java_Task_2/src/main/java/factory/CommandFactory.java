@@ -1,5 +1,9 @@
 package factory;
 
+import exceptions.factory.FactoryException;
+import exceptions.factory.ConfigFormatException;
+import exceptions.factory.ConfigLoadException;
+import exceptions.factory.ClassNotFoundException;
 import commands.*;
 import context.ExecutionContext;
 import logger.CalcLogger;
@@ -26,17 +30,22 @@ public class CommandFactory
         catch (Exception e)
         {
             logger.error("Error initializing command factory", e);
-            throw new IllegalStateException("Failed to initialize command factory", e);
+            try
+            {
+                throw new FactoryException("Failed to initialize command factory", e);
+            } catch (FactoryException ex)
+            {
+                throw new RuntimeException(ex);
+            }
         }
     }
 
-    private static void loadCommandsFromFile(String configFilePath)
-    {
+    private static void loadCommandsFromFile(String configFilePath) throws ConfigFormatException, ConfigLoadException {
         InputStream in = CommandFactory.class.getResourceAsStream(configFilePath);
         if (in == null)
         {
             logger.error("Cannot open configuration file: " + configFilePath);
-            throw new IllegalArgumentException("Cannot open configuration file: " + configFilePath);
+            throw new ConfigLoadException("Cannot open configuration file: " + configFilePath);
         }
 
         try (Scanner scanner = new Scanner(in))
@@ -47,22 +56,22 @@ public class CommandFactory
                 if (pair.length < 2)
                 {
                     logger.error("Bad configuration file format for: " + pair);
-                    throw new IllegalArgumentException("Bad configuration file format");
+                    throw new ConfigFormatException("Bad configuration file format");
                 }
                 try
                 {
                     commandMap.put(pair[0], (Class<? extends Command>) Class.forName(pair[1]));
                 }
-                catch (ClassNotFoundException | ClassCastException e)
+                catch (ClassCastException | java.lang.ClassNotFoundException e)
                 {
                     logger.error("Bad configuration file entry: " + pair, e);
-                    throw new IllegalArgumentException("Bad configuration file entry: " + pair);
+                    throw new ConfigFormatException("Bad configuration file entry: " + pair, e);
                 }
             }
         }
     }
 
-    public Command createCommand(String commandName, ExecutionContext context, List<String> args)
+    public Command createCommand(String commandName, ExecutionContext context, List<String> args) throws FactoryException
     {
         logger.info("Creating command: {}", commandName);
         Class<? extends Command> commandClass = commandMap.get(commandName.toUpperCase());
@@ -70,7 +79,7 @@ public class CommandFactory
         if (commandClass == null)
         {
             logger.error("Unknown command: {}", commandName);
-            throw new IllegalArgumentException("Unknown command: " + commandName);
+            throw new FactoryException("Unknown command: " + commandName);
         }
         try
         {
@@ -82,7 +91,7 @@ public class CommandFactory
         catch (Exception e)
         {
             logger.error("Error creating command: {}", commandName, e);
-            throw new IllegalStateException("Failed to create command: " + commandName, e);
+            throw new FactoryException("Failed to create command: " + commandName, e);
         }
     }
 }
