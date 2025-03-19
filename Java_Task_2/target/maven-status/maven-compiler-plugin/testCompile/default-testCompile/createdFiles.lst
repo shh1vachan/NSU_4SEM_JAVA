@@ -1,6 +1,6 @@
 commands/PushTest.class
-commands/SubtractTest.class
 commands/PopTest.class
+commands/SubtractTest.class
 commands/MultiplyTest.class
 commands/DivideTest.class
 commands/DefineTest.class
