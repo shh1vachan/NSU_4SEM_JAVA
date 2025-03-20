@@ -4,19 +4,18 @@ import logger.CalcLogger;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
 import exceptions.operation.OperationException;
-import exceptions.stack.StackUnderflowException;
 
 public class Subtract implements Command
 {
     private static final Logger logger = CalcLogger.getLogger();
 
     @Override
-    public void execute(ExecutionContext context, List<String> args) throws StackUnderflowException
+    public void execute(ExecutionContext context, List<String> args) throws OperationException
     {
         if (context.get_stack().size() < 2)
         {
             logger.error("Subtract operation failed: Not enough elements in stack.");
-            throw new StackUnderflowException("Subtract command requires at least two values in the stack.");
+            throw new OperationException("Subtract command requires at least two values in the stack.");
         }
 
         double second = context.get_stack().pop();

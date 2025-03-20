@@ -1,7 +1,7 @@
 package commands;
 
 import context.ExecutionContext;
-import exceptions.stack.StackUnderflowException;
+import exceptions.operation.OperationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -34,6 +34,6 @@ class PopTest
     @Test
     void testPopEmptyStack()
     {
-        assertThrows(StackUnderflowException.class, () -> Pop.execute(context, List.of()));
+        assertThrows(OperationException.class, () -> Pop.execute(context, List.of()));
     }
 }

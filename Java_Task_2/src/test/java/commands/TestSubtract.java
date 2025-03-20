@@ -1,10 +1,10 @@
 package commands;
 
 import context.ExecutionContext;
+import exceptions.operation.OperationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
-import exceptions.stack.StackUnderflowException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,6 +36,6 @@ class SubtractTest
     void testSubtractInvalid()
     {
         context.get_stack().push((double)5);
-        assertThrows(StackUnderflowException.class, () -> Subtract.execute(context, List.of()));
+        assertThrows(OperationException.class, () -> Subtract.execute(context, List.of()));
     }
 }

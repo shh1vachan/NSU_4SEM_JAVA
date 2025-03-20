@@ -1,9 +1,6 @@
 package factory;
 
 import exceptions.factory.FactoryException;
-import exceptions.factory.ConfigFormatException;
-import exceptions.factory.ConfigLoadException;
-import exceptions.factory.ClassNotFoundException;
 import commands.*;
 import context.ExecutionContext;
 import logger.CalcLogger;
@@ -27,25 +24,24 @@ public class CommandFactory
         {
             loadCommandsFromFile("/factory_config.txt");
         }
-        catch (Exception e)
+        catch (FactoryException e)
         {
             logger.error("Error initializing command factory", e);
-            try
-            {
+            try {
                 throw new FactoryException("Failed to initialize command factory", e);
-            } catch (FactoryException ex)
-            {
+            } catch (FactoryException ex) {
                 throw new RuntimeException(ex);
             }
         }
     }
 
-    private static void loadCommandsFromFile(String configFilePath) throws ConfigFormatException, ConfigLoadException {
+    private static void loadCommandsFromFile(String configFilePath) throws FactoryException
+    {
         InputStream in = CommandFactory.class.getResourceAsStream(configFilePath);
         if (in == null)
         {
             logger.error("Cannot open configuration file: " + configFilePath);
-            throw new ConfigLoadException("Cannot open configuration file: " + configFilePath);
+            throw new FactoryException("Cannot open configuration file: " + configFilePath);
         }
 
         try (Scanner scanner = new Scanner(in))
@@ -56,18 +52,22 @@ public class CommandFactory
                 if (pair.length < 2)
                 {
                     logger.error("Bad configuration file format for: " + pair);
-                    throw new ConfigFormatException("Bad configuration file format");
+                    throw new FactoryException("Bad configuration file format");
                 }
                 try
                 {
                     commandMap.put(pair[0], (Class<? extends Command>) Class.forName(pair[1]));
                 }
-                catch (ClassCastException | java.lang.ClassNotFoundException e)
+                catch (ClassNotFoundException | ClassCastException e)
                 {
                     logger.error("Bad configuration file entry: " + pair, e);
-                    throw new ConfigFormatException("Bad configuration file entry: " + pair, e);
+                    throw new FactoryException("Bad configuration file entry: " + pair, e);
                 }
             }
+        }
+        catch (Exception e)
+        {
+            throw new FactoryException("Error occurred during command loading", e);
         }
     }
 

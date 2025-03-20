@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="factory.FactoryTest" time="0.032" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="factory.FactoryTest" time="0.022" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-21.0.4.0.7-2.fc40.x86_64/lib"/>
-    <property name="sun.java.command" value="/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire/surefirebooter12343347016046101315.jar /home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire 2025-03-20T01-52-04_181-jvmRun1 surefire13842261588345722243tmp surefire_016598375097072197115tmp"/>
+    <property name="sun.java.command" value="/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire/surefirebooter9412108365263775074.jar /home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire 2025-03-21T02-07-25_517-jvmRun1 surefire7411035613001342506tmp surefire_0799216247848986501tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/test-classes:/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/classes:/home/shh1vachan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/shh1vachan/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/shh1vachan/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/shh1vachan/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/shh1vachan/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/shh1vachan/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:/home/shh1vachan/.m2/repository/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar:/home/shh1vachan/.m2/repository/org/apache/logging/log4j/log4j-core/2.14.1/log4j-core-2.14.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire/surefirebooter12343347016046101315.jar"/>
+    <property name="surefire.real.class.path" value="/home/shh1vachan/IdeaProjects/Java_Tasks/Java_Task_2/target/surefire/surefirebooter9412108365263775074.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.4+7"/>
     <property name="user.name" value="shh1vachan"/>
@@ -55,31 +55,31 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testFactoryCreatesAlls" classname="factory.FactoryTest" time="0.03">
-    <system-out><![CDATA[2025-03-20 01:52:05 [main] INFO : Creating command: PUSH
+  <testcase name="testFactoryCreatesAlls" classname="factory.FactoryTest" time="0.021">
+    <system-out><![CDATA[2025-03-21 02:07:27 [main] INFO : Creating command: PUSH
 Pushed: 10.0
-2025-03-20 01:52:05 [main] INFO : Command PUSH created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: POP
-2025-03-20 01:52:05 [main] INFO : Popped: 10.0
-2025-03-20 01:52:05 [main] INFO : Command POP created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: DEFINE
-2025-03-20 01:52:05 [main] INFO : Defined: x = 10.0
-2025-03-20 01:52:05 [main] INFO : Command DEFINE created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: DIVIDE
-2025-03-20 01:52:05 [main] INFO : Divide executed: 1.0 / 2.0 = 0.5
-2025-03-20 01:52:05 [main] INFO : Command DIVIDE created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: MULTIPLY
-2025-03-20 01:52:05 [main] INFO : Multiply executed: 1.0 * 2.0 = 2.0
-2025-03-20 01:52:05 [main] INFO : Command MULTIPLY created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: SUBTRACT
-2025-03-20 01:52:05 [main] INFO : Subtract executed: 1.0 - 2.0 = -1.0
-2025-03-20 01:52:05 [main] INFO : Command SUBTRACT created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: SQRT
-2025-03-20 01:52:05 [main] INFO : Sqrt executed: sqrt(4.0) = 2.0
-2025-03-20 01:52:05 [main] INFO : Command SQRT created successfully.
-2025-03-20 01:52:05 [main] INFO : Creating command: ADD
-2025-03-20 01:52:05 [main] INFO : ADD executed: 1.0 + 2.0 = 3.0
-2025-03-20 01:52:05 [main] INFO : Command ADD created successfully.
+2025-03-21 02:07:27 [main] INFO : Command PUSH created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: POP
+2025-03-21 02:07:27 [main] INFO : Popped: 10.0
+2025-03-21 02:07:27 [main] INFO : Command POP created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: DEFINE
+2025-03-21 02:07:27 [main] INFO : Defined: x = 10.0
+2025-03-21 02:07:27 [main] INFO : Command DEFINE created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: DIVIDE
+2025-03-21 02:07:27 [main] INFO : Divide executed: 1.0 / 2.0 = 0.5
+2025-03-21 02:07:27 [main] INFO : Command DIVIDE created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: MULTIPLY
+2025-03-21 02:07:27 [main] INFO : Multiply executed: 1.0 * 2.0 = 2.0
+2025-03-21 02:07:27 [main] INFO : Command MULTIPLY created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: SUBTRACT
+2025-03-21 02:07:27 [main] INFO : Subtract executed: 1.0 - 2.0 = -1.0
+2025-03-21 02:07:27 [main] INFO : Command SUBTRACT created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: SQRT
+2025-03-21 02:07:27 [main] INFO : Sqrt executed: sqrt(4.0) = 2.0
+2025-03-21 02:07:27 [main] INFO : Command SQRT created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: ADD
+2025-03-21 02:07:27 [main] INFO : Added: 1.0 + 2.0 = 3.0
+2025-03-21 02:07:27 [main] INFO : Command ADD created successfully.
 ]]></system-out>
   </testcase>
 </testsuite>

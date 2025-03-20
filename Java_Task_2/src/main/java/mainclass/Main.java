@@ -1,12 +1,10 @@
 package mainclass;
 
-import context.ExecutionContext;
 import logger.CalcLogger;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main
@@ -15,8 +13,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        ExecutionContext context = new ExecutionContext();
-        Calculator calculator = new Calculator();  // Создаем объект калькулятора
+        Calculator calculator = new Calculator();
 
         if (args.length > 0)
         {
@@ -28,24 +25,10 @@ public class Main
                 logger.error("Cannot read file: " + filename);
                 System.exit(1);
             }
+
             try (Scanner scanner = new Scanner(file))
             {
-                while (scanner.hasNextLine())
-                {
-                    String commandLine = scanner.nextLine();
-                    if (commandLine.startsWith("#") || commandLine.trim().isEmpty())
-                    {
-                        continue; // for empty strings
-                    }
-                    try
-                    {
-                        calculator.executeCommand(commandLine, context);  // Вызов метода калькулятора
-                    }
-                    catch (Exception e)
-                    {
-                        logger.error("Error during command execution: ", e);
-                    }
-                }
+                calculator.executeCommands(scanner, false);
             }
             catch (FileNotFoundException e)
             {
@@ -56,24 +39,7 @@ public class Main
         else
         {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter commands (type 'exit' to quit calculator):");
-            while (scanner.hasNextLine())
-            {
-                String commandLine = scanner.nextLine();
-                if ("exit".equalsIgnoreCase(commandLine.trim()))
-                    break;
-                if (commandLine.startsWith("#") || commandLine.trim().isEmpty())
-                    continue; // for comments and empty strings
-
-                try
-                {
-                    calculator.executeCommand(commandLine, context);  // Вызов метода калькулятора
-                }
-                catch (Exception e)
-                {
-                    logger.error("Error during command execution: ", e);
-                }
-            }
+            calculator.executeCommands(scanner, true);
         }
     }
 }

@@ -1917,3 +1917,157 @@ exceptions.factory.FactoryException: Unknown command: SUBTRACRT
 	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
 	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
 	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-21 02:03:01 [main] ERROR: Define failed. Invalid value for variable
+2025-03-21 02:03:01 [main] INFO : Defined: x = 5.0
+2025-03-21 02:03:01 [main] ERROR: Sqrt operation failed: Stack is empty.
+2025-03-21 02:03:01 [main] INFO : Sqrt executed: sqrt(9.0) = 3.0
+2025-03-21 02:03:01 [main] ERROR: Sqrt operation failed: Cannot compute the square root of a negative number.
+2025-03-21 02:03:01 [main] ERROR: Multiply operation failed: Not enough elements in stack.
+2025-03-21 02:03:01 [main] INFO : Multiply executed: 5.0 * 5.0 = 25.0
+2025-03-21 02:03:01 [main] INFO : Divide executed: 6.0 / 2.0 = 3.0
+2025-03-21 02:03:01 [main] ERROR: Divide operation failed: Not enough elements in stack.
+2025-03-21 02:03:01 [main] ERROR: Push failed: no parameters
+2025-03-21 02:03:01 [main] INFO : Pushed variable: x with value 5.0
+2025-03-21 02:03:01 [main] ERROR: Add operation failed: insufficient arguments.
+2025-03-21 02:03:01 [main] INFO : Added: 5.0 + 2.0 = 7.0
+2025-03-21 02:03:01 [main] INFO : Popped: 5.0
+2025-03-21 02:03:01 [main] ERROR: Pop failed. Pop command requires at least one value in the stack.
+2025-03-21 02:03:01 [main] INFO : Subtract executed: 5.0 - 2.0 = 3.0
+2025-03-21 02:03:01 [main] ERROR: Subtract operation failed: Not enough elements in stack.
+2025-03-21 02:03:01 [main] INFO : Creating command: PUSH
+2025-03-21 02:03:01 [main] INFO : Command PUSH created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: POP
+2025-03-21 02:03:01 [main] INFO : Popped: 10.0
+2025-03-21 02:03:01 [main] INFO : Command POP created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: DEFINE
+2025-03-21 02:03:01 [main] INFO : Defined: x = 10.0
+2025-03-21 02:03:01 [main] INFO : Command DEFINE created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: DIVIDE
+2025-03-21 02:03:01 [main] INFO : Divide executed: 1.0 / 2.0 = 0.5
+2025-03-21 02:03:01 [main] INFO : Command DIVIDE created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: MULTIPLY
+2025-03-21 02:03:01 [main] INFO : Multiply executed: 1.0 * 2.0 = 2.0
+2025-03-21 02:03:01 [main] INFO : Command MULTIPLY created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: SUBTRACT
+2025-03-21 02:03:01 [main] INFO : Subtract executed: 1.0 - 2.0 = -1.0
+2025-03-21 02:03:01 [main] INFO : Command SUBTRACT created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: SQRT
+2025-03-21 02:03:01 [main] INFO : Sqrt executed: sqrt(4.0) = 2.0
+2025-03-21 02:03:01 [main] INFO : Command SQRT created successfully.
+2025-03-21 02:03:01 [main] INFO : Creating command: ADD
+2025-03-21 02:03:01 [main] INFO : Added: 1.0 + 2.0 = 3.0
+2025-03-21 02:03:01 [main] INFO : Command ADD created successfully.
+2025-03-21 02:03:09 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-03-21 02:03:09 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-03-21 02:03:11 [mainclass.Main.main()] INFO : Creating command: PUSH
+2025-03-21 02:03:11 [mainclass.Main.main()] INFO : Command PUSH created successfully.
+2025-03-21 02:03:13 [mainclass.Main.main()] INFO : Creating command: ADD
+2025-03-21 02:03:13 [mainclass.Main.main()] INFO : Added: 2.0 + 4.0 = 6.0
+2025-03-21 02:03:13 [mainclass.Main.main()] INFO : Command ADD created successfully.
+2025-03-21 02:03:14 [mainclass.Main.main()] INFO : Creating command: ADD
+2025-03-21 02:03:14 [mainclass.Main.main()] ERROR: Add operation failed: insufficient arguments.
+2025-03-21 02:03:14 [mainclass.Main.main()] ERROR: Error creating command: ADD
+exceptions.operation.OperationException: Add command requires at least two numbers.
+	at commands.Add.execute(Add.java:19) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:89) ~[classes/:?]
+	at mainclass.Calculator.executeCommand(Calculator.java:58) ~[classes/:?]
+	at mainclass.Calculator.executeCommands(Calculator.java:40) ~[classes/:?]
+	at mainclass.Main.main(Main.java:44) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-21 02:03:14 [mainclass.Main.main()] ERROR: Error creating command: 
+exceptions.factory.FactoryException: Failed to create command: ADD
+	at factory.CommandFactory.createCommand(CommandFactory.java:96) ~[classes/:?]
+	at mainclass.Calculator.executeCommand(Calculator.java:58) ~[classes/:?]
+	at mainclass.Calculator.executeCommands(Calculator.java:40) ~[classes/:?]
+	at mainclass.Main.main(Main.java:44) ~[classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:375) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:364) ~[?:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:286) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: exceptions.operation.OperationException: Add command requires at least two numbers.
+	at commands.Add.execute(Add.java:19) ~[classes/:?]
+	at factory.CommandFactory.createCommand(CommandFactory.java:89) ~[classes/:?]
+	... 7 more
+2025-03-21 02:06:34 [main] ERROR: Define failed. Invalid value for variable
+2025-03-21 02:06:34 [main] INFO : Defined: x = 5.0
+2025-03-21 02:06:34 [main] ERROR: Sqrt operation failed: Stack is empty.
+2025-03-21 02:06:34 [main] INFO : Sqrt executed: sqrt(9.0) = 3.0
+2025-03-21 02:06:34 [main] ERROR: Sqrt operation failed: Cannot compute the square root of a negative number.
+2025-03-21 02:06:34 [main] ERROR: Multiply operation failed: Not enough elements in stack.
+2025-03-21 02:06:34 [main] INFO : Multiply executed: 5.0 * 5.0 = 25.0
+2025-03-21 02:06:34 [main] INFO : Divide executed: 6.0 / 2.0 = 3.0
+2025-03-21 02:06:34 [main] ERROR: Divide operation failed: Not enough elements in stack.
+2025-03-21 02:06:34 [main] ERROR: Push failed: no parameters
+2025-03-21 02:06:34 [main] INFO : Pushed variable: x with value 5.0
+2025-03-21 02:06:34 [main] ERROR: Add operation failed: insufficient arguments.
+2025-03-21 02:06:34 [main] INFO : Added: 5.0 + 2.0 = 7.0
+2025-03-21 02:06:34 [main] INFO : Popped: 5.0
+2025-03-21 02:06:34 [main] ERROR: Pop failed. Pop command requires at least one value in the stack.
+2025-03-21 02:06:34 [main] INFO : Subtract executed: 5.0 - 2.0 = 3.0
+2025-03-21 02:06:34 [main] ERROR: Subtract operation failed: Not enough elements in stack.
+2025-03-21 02:06:34 [main] INFO : Creating command: PUSH
+2025-03-21 02:06:34 [main] INFO : Command PUSH created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: POP
+2025-03-21 02:06:34 [main] INFO : Popped: 10.0
+2025-03-21 02:06:34 [main] INFO : Command POP created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: DEFINE
+2025-03-21 02:06:34 [main] INFO : Defined: x = 10.0
+2025-03-21 02:06:34 [main] INFO : Command DEFINE created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: DIVIDE
+2025-03-21 02:06:34 [main] INFO : Divide executed: 1.0 / 2.0 = 0.5
+2025-03-21 02:06:34 [main] INFO : Command DIVIDE created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: MULTIPLY
+2025-03-21 02:06:34 [main] INFO : Multiply executed: 1.0 * 2.0 = 2.0
+2025-03-21 02:06:34 [main] INFO : Command MULTIPLY created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: SUBTRACT
+2025-03-21 02:06:34 [main] INFO : Subtract executed: 1.0 - 2.0 = -1.0
+2025-03-21 02:06:34 [main] INFO : Command SUBTRACT created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: SQRT
+2025-03-21 02:06:34 [main] INFO : Sqrt executed: sqrt(4.0) = 2.0
+2025-03-21 02:06:34 [main] INFO : Command SQRT created successfully.
+2025-03-21 02:06:34 [main] INFO : Creating command: ADD
+2025-03-21 02:06:34 [main] INFO : Added: 1.0 + 2.0 = 3.0
+2025-03-21 02:06:34 [main] INFO : Command ADD created successfully.
+2025-03-21 02:07:27 [main] ERROR: Define failed. Invalid value for variable
+2025-03-21 02:07:27 [main] INFO : Defined: x = 5.0
+2025-03-21 02:07:27 [main] ERROR: Sqrt operation failed: Stack is empty.
+2025-03-21 02:07:27 [main] INFO : Sqrt executed: sqrt(9.0) = 3.0
+2025-03-21 02:07:27 [main] ERROR: Sqrt operation failed: Cannot compute the square root of a negative number.
+2025-03-21 02:07:27 [main] ERROR: Multiply operation failed: Not enough elements in stack.
+2025-03-21 02:07:27 [main] INFO : Multiply executed: 5.0 * 5.0 = 25.0
+2025-03-21 02:07:27 [main] INFO : Divide executed: 6.0 / 2.0 = 3.0
+2025-03-21 02:07:27 [main] ERROR: Divide operation failed: Not enough elements in stack.
+2025-03-21 02:07:27 [main] ERROR: Push failed: no parameters
+2025-03-21 02:07:27 [main] INFO : Pushed variable: x with value 5.0
+2025-03-21 02:07:27 [main] ERROR: Add operation failed: insufficient arguments.
+2025-03-21 02:07:27 [main] INFO : Added: 5.0 + 2.0 = 7.0
+2025-03-21 02:07:27 [main] INFO : Popped: 5.0
+2025-03-21 02:07:27 [main] ERROR: Pop failed. Pop command requires at least one value in the stack.
+2025-03-21 02:07:27 [main] INFO : Subtract executed: 5.0 - 2.0 = 3.0
+2025-03-21 02:07:27 [main] ERROR: Subtract operation failed: Not enough elements in stack.
+2025-03-21 02:07:27 [main] INFO : Creating command: PUSH
+2025-03-21 02:07:27 [main] INFO : Command PUSH created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: POP
+2025-03-21 02:07:27 [main] INFO : Popped: 10.0
+2025-03-21 02:07:27 [main] INFO : Command POP created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: DEFINE
+2025-03-21 02:07:27 [main] INFO : Defined: x = 10.0
+2025-03-21 02:07:27 [main] INFO : Command DEFINE created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: DIVIDE
+2025-03-21 02:07:27 [main] INFO : Divide executed: 1.0 / 2.0 = 0.5
+2025-03-21 02:07:27 [main] INFO : Command DIVIDE created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: MULTIPLY
+2025-03-21 02:07:27 [main] INFO : Multiply executed: 1.0 * 2.0 = 2.0
+2025-03-21 02:07:27 [main] INFO : Command MULTIPLY created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: SUBTRACT
+2025-03-21 02:07:27 [main] INFO : Subtract executed: 1.0 - 2.0 = -1.0
+2025-03-21 02:07:27 [main] INFO : Command SUBTRACT created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: SQRT
+2025-03-21 02:07:27 [main] INFO : Sqrt executed: sqrt(4.0) = 2.0
+2025-03-21 02:07:27 [main] INFO : Command SQRT created successfully.
+2025-03-21 02:07:27 [main] INFO : Creating command: ADD
+2025-03-21 02:07:27 [main] INFO : Added: 1.0 + 2.0 = 3.0
+2025-03-21 02:07:27 [main] INFO : Command ADD created successfully.

@@ -35,7 +35,6 @@ public class Push implements Command
             }
             double value = context.get_param(arg);
             context.get_stack().push(value);
-            context.get_stack().push(value);
             logger.info("Pushed variable: " + arg + " with value " + value);
         }
     }

@@ -3,7 +3,7 @@ package commands;
 import java.util.List;
 import context.ExecutionContext;
 import exceptions.arithmetic.ArithmeticException;
-import exceptions.stack.StackUnderflowException;
+import exceptions.operation.OperationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +22,7 @@ class SqrtTest
     }
 
     @Test
-    void testSquareRootValid() throws StackUnderflowException, ArithmeticException {
+    void testSquareRootValid() throws OperationException, ArithmeticException {
         context.get_stack().push(9.0);
         squareRoot.execute(context, List.of());
         assertEquals(3.0, context.get_stack().peek());
@@ -31,7 +31,7 @@ class SqrtTest
     @Test
     void testSquareRootEmptyStack()
     {
-        assertThrows(StackUnderflowException.class, () -> {
+        assertThrows(OperationException.class, () -> {
             squareRoot.execute(context, List.of());
         });
     }
